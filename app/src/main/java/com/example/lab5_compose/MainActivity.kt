@@ -1,7 +1,6 @@
 package com.example.lab5_compose
 
 import android.os.Bundle
-import android.provider.MediaStore.Audio.Artists
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
@@ -16,14 +15,11 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
-import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Card
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -91,136 +87,144 @@ fun menu(){
             }
         }
     }
-    Box (
+    LazyColumn(
         modifier = Modifier
+            .fillMaxSize()
             .background(Color.White)
-            .height(40.dp)
-            .fillMaxWidth()
-    ){
-        Text(
-            text = "Your Favorites",
-            modifier = Modifier
-                .padding(top = 5.dp)
-                .padding(horizontal = 15.dp),
-            fontSize = 20.sp
-        )
-    }
-    Box(
-        modifier = Modifier
-            .background(Color.Black)
-            .height(480.dp)
-            .fillMaxWidth()
-    ){
-        Column {
-            Row {
-                Box(
+    ) {
+        item {
+            Box (
+                modifier = Modifier
+                    .background(Color.White)
+                    .height(40.dp)
+                    .fillMaxWidth()
+            ){
+                Text(
+                    text = "Your Favorites",
                     modifier = Modifier
-                ){
-                    functionalCard(
-                        painter = painterResource(id = R.drawable.yellowclawnilsjim),
-                        contentDescription = "",
-                        eventTittle = "Yellow Claw",
-                        eventDescription = "EDC Las Vegas"
-                    )
-                }
-                Box(
-                    modifier = Modifier
-                ){
-                    functionalCard(
-                        painter = painterResource(id = R.drawable.timmyttrumpetjpeg),
-                        contentDescription = "",
-                        eventTittle = "Timmy Trumpet",
-                        eventDescription = "Tomorrowland"
-                    )
+                        .padding(top = 5.dp)
+                        .padding(horizontal = 15.dp),
+                    fontSize = 20.sp
+                )
+            }
+            Box(
+                modifier = Modifier
+                    .background(Color.Black)
+                    .height(480.dp)
+                    .fillMaxWidth()
+            ){
+                Column {
+                    Row {
+                        Box(
+                            modifier = Modifier
+                        ){
+                            functionalCard(
+                                painter = painterResource(id = R.drawable.yellowclawnilsjim),
+                                description = "",
+                                eventArtist = "Yellow Claw",
+                                eventInformation = "EDC Las Vegas"
+                            )
+                        }
+                        Box(
+                            modifier = Modifier
+                        ){
+                            functionalCard(
+                                painter = painterResource(id = R.drawable.timmyttrumpetjpeg),
+                                description = "",
+                                eventArtist = "Timmy Trumpet",
+                                eventInformation = "Tomorrowland"
+                            )
+                        }
+                    }
+                    Row {
+                        Box(
+                            modifier = Modifier
+                        ){
+                            functionalCard(
+                                painter = painterResource(id = R.drawable.blackpink),
+                                description = "",
+                                eventArtist = "Black Pink",
+                                eventInformation = "Born Pink"
+                            )
+                        }
+                        Box(
+                            modifier = Modifier
+                        ){
+                            functionalCard(
+                                painter = painterResource(id = R.drawable.taylorswiftjpg),
+                                description = "",
+                                eventArtist = "Taylor Swift",
+                                eventInformation = "The Eras Tour"
+                            )
+                        }
+                    }
                 }
             }
-            Row {
-                Box(
+            Box (
+                modifier = Modifier
+                    .background(Color.White)
+                    .height(40.dp)
+                    .fillMaxWidth()
+            ){
+                Text(
+                    text = "All Concerts",
                     modifier = Modifier
-                ){
-                    functionalCard(
-                        painter = painterResource(id = R.drawable.blackpink),
-                        contentDescription = "",
-                        eventTittle = "Black Pink",
-                        eventDescription = "Born Pink"
-                    )
-                }
-                Box(
-                    modifier = Modifier
-                ){
-                    functionalCard(
-                        painter = painterResource(id = R.drawable.taylorswiftjpg),
-                        contentDescription = "",
-                        eventTittle = "Taylor Swift",
-                        eventDescription = "The Eras Tour"
-                    )
-                }
+                        .padding(top = 5.dp)
+                        .padding(horizontal = 15.dp),
+                    fontSize = 20.sp
+                )
             }
-        }
-    }
-    Box (
-        modifier = Modifier
-            .background(Color.White)
-            .height(40.dp)
-            .fillMaxWidth()
-    ){
-        Text(
-            text = "All Concerts",
-            modifier = Modifier
-                .padding(top = 5.dp)
-                .padding(horizontal = 15.dp),
-            fontSize = 20.sp
-        )
-    }
-    Box(
-        modifier = Modifier
-            .background(Color.Black)
-            .height(480.dp)
-            .fillMaxWidth()
-    ){
-        Column {
-            Row {
-                Box(
-                    modifier = Modifier
-                ){
-                    functionalCard(
-                        painter = painterResource(id = R.drawable.arianagrande),
-                        contentDescription = "",
-                        eventTittle = "Ariana Grande",
-                        eventDescription = "thank u, next"
-                    )
-                }
-                Box(
-                    modifier = Modifier
-                ){
-                    functionalCard(
-                        painter = painterResource(id = R.drawable.kshmrjpg),
-                        contentDescription = "",
-                        eventTittle = "KSHMR",
-                        eventDescription = "Parookaville"
-                    )
-                }
-            }
-            Row {
-                Box(
-                    modifier = Modifier
-                ){
-                    functionalCard(
-                        painter = painterResource(id = R.drawable.alok),
-                        contentDescription = "",
-                        eventTittle = "Alok",
-                        eventDescription = "Untold Festival"
-                    )
-                }
-                Box(
-                    modifier = Modifier
-                ){
-                    functionalCard(
-                        painter = painterResource(id = R.drawable.khalid),
-                        contentDescription = "",
-                        eventTittle = "Khalid",
-                        eventDescription = "American Teen"
-                    )
+            Box(
+                modifier = Modifier
+                    .background(Color.Black)
+                    .height(480.dp)
+                    .fillMaxWidth()
+            ){
+                Column {
+                    Row {
+                        Box(
+                            modifier = Modifier
+                        ){
+                            functionalCard(
+                                painter = painterResource(id = R.drawable.arianagrande),
+                                description = "",
+                                eventArtist = "Ariana Grande",
+                                eventInformation = "thank u, next"
+                            )
+                        }
+                        Box(
+                            modifier = Modifier
+                        ){
+                            functionalCard(
+                                painter = painterResource(id = R.drawable.kshmrjpg),
+                                description = "",
+                                eventArtist = "KSHMR",
+                                eventInformation = "Parookaville"
+                            )
+                        }
+                    }
+                    Row {
+                        Box(
+                            modifier = Modifier
+                        ){
+                            functionalCard(
+                                painter = painterResource(id = R.drawable.alok),
+                                description = "",
+                                eventArtist = "Alok",
+                                eventInformation = "Untold Festival"
+                            )
+                        }
+                        Box(
+                            modifier = Modifier
+                        ){
+                            functionalCard(
+                                painter = painterResource(id = R.drawable.khalid),
+                                description = "",
+                                eventArtist = "Khalid",
+                                eventInformation = "American Teen"
+                            )
+                        }
+                    }
                 }
             }
         }
@@ -230,9 +234,9 @@ fun menu(){
 @Composable
 fun functionalCard(
     painter: Painter,
-    contentDescription: String,
-    eventTittle: String,
-    eventDescription: String
+    description: String,
+    eventArtist: String,
+    eventInformation: String
     ){
     Card(
         modifier = Modifier
@@ -247,13 +251,13 @@ fun functionalCard(
         ){
             Text(
                 modifier = Modifier.padding(top = 160.dp, start = 15.dp),
-                text = eventTittle,
+                text = eventArtist,
                 fontSize = 16.sp,
                 fontWeight = FontWeight.Bold
             )
             Text(
                 modifier = Modifier.padding(top = 180.dp, start = 15.dp),
-                text = eventDescription,
+                text = eventInformation,
                 fontSize = 14.sp,
             )
             Card(
@@ -264,7 +268,7 @@ fun functionalCard(
             ){
                 Image(
                     painter = painter,
-                    contentDescription = contentDescription,
+                    contentDescription = description,
                     contentScale = ContentScale.Crop
                 )
             }
