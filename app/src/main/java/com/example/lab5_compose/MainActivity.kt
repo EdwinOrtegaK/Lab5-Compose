@@ -116,7 +116,7 @@ fun menu(){
                 Box(
                     modifier = Modifier
                 ){
-                    concertCard(
+                    functionalCard(
                         painter = painterResource(id = R.drawable.yellowclawnilsjim),
                         contentDescription = "",
                         eventTittle = "Yellow Claw",
@@ -126,7 +126,7 @@ fun menu(){
                 Box(
                     modifier = Modifier
                 ){
-                    concertCard(
+                    functionalCard(
                         painter = painterResource(id = R.drawable.timmyttrumpetjpeg),
                         contentDescription = "",
                         eventTittle = "Timmy Trumpet",
@@ -138,7 +138,7 @@ fun menu(){
                 Box(
                     modifier = Modifier
                 ){
-                    concertCard(
+                    functionalCard(
                         painter = painterResource(id = R.drawable.blackpink),
                         contentDescription = "",
                         eventTittle = "Black Pink",
@@ -148,7 +148,7 @@ fun menu(){
                 Box(
                     modifier = Modifier
                 ){
-                    concertCard(
+                    functionalCard(
                         painter = painterResource(id = R.drawable.taylorswiftjpg),
                         contentDescription = "",
                         eventTittle = "Taylor Swift",
@@ -183,7 +183,7 @@ fun menu(){
                 Box(
                     modifier = Modifier
                 ){
-                    concertCard(
+                    functionalCard(
                         painter = painterResource(id = R.drawable.arianagrande),
                         contentDescription = "",
                         eventTittle = "Ariana Grande",
@@ -193,7 +193,7 @@ fun menu(){
                 Box(
                     modifier = Modifier
                 ){
-                    concertCard(
+                    functionalCard(
                         painter = painterResource(id = R.drawable.kshmrjpg),
                         contentDescription = "",
                         eventTittle = "KSHMR",
@@ -205,7 +205,7 @@ fun menu(){
                 Box(
                     modifier = Modifier
                 ){
-                    concertCard(
+                    functionalCard(
                         painter = painterResource(id = R.drawable.alok),
                         contentDescription = "",
                         eventTittle = "Alok",
@@ -215,7 +215,7 @@ fun menu(){
                 Box(
                     modifier = Modifier
                 ){
-                    concertCard(
+                    functionalCard(
                         painter = painterResource(id = R.drawable.khalid),
                         contentDescription = "",
                         eventTittle = "Khalid",
@@ -228,7 +228,7 @@ fun menu(){
 }
 
 @Composable
-fun concertCard(
+fun functionalCard(
     painter: Painter,
     contentDescription: String,
     eventTittle: String,
