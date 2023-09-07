@@ -67,7 +67,7 @@ fun menu(){
             Text(
                 modifier = Modifier
                     .padding(start = 12.dp, end = 130.dp, top = 15.dp),
-                text = "Todo Eventos",
+                text = "Todo los Eventos ",
                 fontSize = 30.sp
             )
             Spacer(
