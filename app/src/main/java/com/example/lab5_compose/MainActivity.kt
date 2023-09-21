@@ -58,7 +58,7 @@ fun mainScreen(){
 @Composable
 fun menu(){
     Box(
-        modifier = Modifier
+        modifier = Modifier 
             .background(Color.Gray)
             .height(70.dp)
             .fillMaxWidth()
@@ -67,7 +67,7 @@ fun menu(){
             Text(
                 modifier = Modifier
                     .padding(start = 12.dp, end = 130.dp, top = 15.dp),
-                text = "Todo los Eventos ",
+                text = "TodoEventos+",
                 fontSize = 30.sp
             )
             Spacer(
