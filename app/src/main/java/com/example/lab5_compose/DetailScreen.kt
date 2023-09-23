@@ -28,6 +28,8 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
+import com.example.lab5_compose.Navigation.AppNavigation
 import com.example.lab5_compose.ui.theme.Lab5ComposeTheme
 
 class DetailScreen : ComponentActivity() {
@@ -35,24 +37,23 @@ class DetailScreen : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             Lab5ComposeTheme {
-                detailScreen()
+                AppNavigation()
             }
         }
     }
 }
 
-@Preview(showBackground = true)
 @Composable
-fun detailScreen(){
+fun detailScreen(navController: NavController){
     Column(
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        detailContent()
+        detailContent(navController)
     }
 }
 
 @Composable
-fun detailContent(){
+fun detailContent(navController: NavController){
     Column {
         Box(
             modifier = Modifier

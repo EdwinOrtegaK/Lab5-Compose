@@ -28,6 +28,8 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
+import com.example.lab5_compose.Navigation.AppNavigation
 import com.example.lab5_compose.ui.theme.Lab5ComposeTheme
 
 class LocationScreen : ComponentActivity() {
@@ -35,24 +37,23 @@ class LocationScreen : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             Lab5ComposeTheme {
-                locationScreeen()
+                AppNavigation()
             }
         }
     }
 }
 
-@Preview(showBackground = true)
 @Composable
-fun locationScreeen(){
+fun locationScreeen(navController: NavController){
     Column(
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        locationContent()
+        locationContent(navController)
     }
 }
 
 @Composable
-fun locationContent(){
+fun locationContent(navController: NavController){
     Box(
         modifier = Modifier
             .background(Color.Gray)

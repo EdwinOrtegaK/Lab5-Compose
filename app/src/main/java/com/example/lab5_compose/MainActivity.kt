@@ -32,6 +32,8 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
+import com.example.lab5_compose.Navigation.AppNavigation
 import com.example.lab5_compose.ui.theme.Lab5ComposeTheme
 
 class MainActivity : ComponentActivity() {
@@ -39,26 +41,25 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             Lab5ComposeTheme {
-                mainScreen()
+                    AppNavigation()
                 }
             }
         }
     }
 
-@Preview(showBackground = true)
 @Composable
-fun mainScreen(){
+fun mainScreen(navController: NavController){
     Column(
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        menu()
+        menu(navController)
     }
 }
 
 @Composable
-fun menu(){
+fun menu(navController: NavController){
     Box(
-        modifier = Modifier 
+        modifier = Modifier
             .background(Color.Gray)
             .height(70.dp)
             .fillMaxWidth()

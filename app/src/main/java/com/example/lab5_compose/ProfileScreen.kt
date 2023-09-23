@@ -28,6 +28,8 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
+import com.example.lab5_compose.Navigation.AppNavigation
 import com.example.lab5_compose.ui.theme.Lab5ComposeTheme
 
 class ProfileScreen : ComponentActivity() {
@@ -35,7 +37,7 @@ class ProfileScreen : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             Lab5ComposeTheme {
-                profileScreeen()
+                AppNavigation()
             }
         }
     }
@@ -43,16 +45,16 @@ class ProfileScreen : ComponentActivity() {
 
 @Preview(showBackground = true)
 @Composable
-fun profileScreeen(){
+fun profileScreeen(navController: NavController){
     Column(
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        profileContent()
+        profileContent(navController)
     }
 }
 
 @Composable
-fun profileContent(){
+fun profileContent(navController: NavController){
     Box (
         modifier = Modifier
             .fillMaxWidth()
