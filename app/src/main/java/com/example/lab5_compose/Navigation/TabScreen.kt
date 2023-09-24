@@ -5,3 +5,5 @@ sealed class TabScreen(val route: String, val title: String){
     object LocationScreen: TabScreen("favoritos", "Favoritos")
     object ProfileScreen: TabScreen("profile", "Perfil")
 }
+
+val allTabScreen = listOf(TabScreen.MainActivity, TabScreen.LocationScreen, TabScreen.ProfileScreen)

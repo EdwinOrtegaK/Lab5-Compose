@@ -43,7 +43,6 @@ class ProfileScreen : ComponentActivity() {
     }
 }
 
-@Preview(showBackground = true)
 @Composable
 fun profileScreeen(navController: NavController){
     Column(
