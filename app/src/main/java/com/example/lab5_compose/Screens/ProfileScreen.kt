@@ -1,4 +1,4 @@
-package com.example.lab5_compose
+package com.example.lab5_compose.Screens
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -15,6 +15,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.material3.Button
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.Text
@@ -25,14 +26,15 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.example.lab5_compose.Navigation.AppNavigation
+import com.example.lab5_compose.Navigation.TabScreen
+import com.example.lab5_compose.R
 import com.example.lab5_compose.ui.theme.Lab5ComposeTheme
 
-class LocationScreen : ComponentActivity() {
+class ProfileScreen : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
@@ -44,16 +46,57 @@ class LocationScreen : ComponentActivity() {
 }
 
 @Composable
-fun locationScreeen(navController: NavController){
+fun profileScreeen(navController: NavController){
     Column(
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        locationContent(navController)
+        profileContent(navController)
     }
 }
 
 @Composable
-fun locationContent(navController: NavController){
+fun profileContent(navController: NavController){
+    Box (
+        modifier = Modifier
+            .fillMaxWidth()
+            .height(300.dp)
+            .background(Color.White), contentAlignment = Alignment.Center
+    ){
+        Image(
+            painterResource(id = R.drawable.fondoespacio),
+            contentDescription = null,
+            contentScale = ContentScale.Crop
+        )
+        Box(
+            modifier = Modifier
+                .height(40.dp)
+                .fillMaxWidth()
+        ){
+            Row{
+                Button(onClick = { navController.navigate(route = TabScreen.MainScreen.route) }) {
+                    Text(text = "Atrás")
+                }
+            }
+        }
+        Box(
+            contentAlignment = Alignment.Center,
+            modifier = Modifier
+                .padding(top = 25.dp)
+                .height(200.dp)
+                .width(105.dp)
+        ){
+            Image(
+                painterResource(id = R.drawable.perfil),
+                contentDescription = null,
+                contentScale = ContentScale.Crop
+            )
+        }
+        Text(
+            text = "Edwin Ortega",
+            modifier = Modifier.padding(top=200.dp),
+            color = Color.White,
+            fontSize = 40.sp)
+    }
     Box(
         modifier = Modifier
             .background(Color.Gray)
@@ -64,35 +107,22 @@ fun locationContent(navController: NavController){
             modifier = Modifier
                 .padding(10.dp)
         ){
-            Row {
+            Row{
                 Image(
-                    painterResource(id = R.drawable.yellowclaw),
+                    painterResource(id = R.drawable.marshmello),
                     modifier = Modifier
                         .clip(CircleShape)
                         .padding(),
                     contentDescription = null,
                     contentScale = ContentScale.Fit
                 )
-                Box(
+                Text(
+                    text = "Edit Profile",
                     modifier = Modifier
-                ){
-                    Column {
-                        Text(
-                            text = "Yellow Claw",
-                            modifier = Modifier
-                                .padding(top = 5.dp)
-                                .padding(horizontal = 15.dp),
-                            fontSize = 20.sp
-                        )
-                        Text(
-                            text = "EDC Las Vegas",
-                            modifier = Modifier
-                                .padding(top = 5.dp)
-                                .padding(horizontal = 15.dp),
-                            fontSize = 12.sp
-                        )
-                    }
-                }
+                        .padding(top = 25.dp)
+                        .padding(horizontal = 15.dp),
+                    fontSize = 20.sp
+                )
                 Spacer(
                     modifier = Modifier.weight(1f)
                 )
@@ -121,35 +151,22 @@ fun locationContent(navController: NavController){
             modifier = Modifier
                 .padding(10.dp)
         ){
-            Row {
+            Row{
                 Image(
-                    painterResource(id = R.drawable.timmytrummpet),
+                    painterResource(id = R.drawable.password),
                     modifier = Modifier
                         .clip(CircleShape)
                         .padding(),
                     contentDescription = null,
                     contentScale = ContentScale.Fit
                 )
-                Box(
+                Text(
+                    text = "Reset Password",
                     modifier = Modifier
-                ){
-                    Column {
-                        Text(
-                            text = "Timmy Trumpet",
-                            modifier = Modifier
-                                .padding(top = 5.dp)
-                                .padding(horizontal = 15.dp),
-                            fontSize = 20.sp
-                        )
-                        Text(
-                            text = "Tomorrowland",
-                            modifier = Modifier
-                                .padding(top = 5.dp)
-                                .padding(horizontal = 15.dp),
-                            fontSize = 12.sp
-                        )
-                    }
-                }
+                        .padding(top = 25.dp)
+                        .padding(horizontal = 15.dp),
+                    fontSize = 20.sp
+                )
                 Spacer(
                     modifier = Modifier.weight(1f)
                 )
@@ -178,35 +195,22 @@ fun locationContent(navController: NavController){
             modifier = Modifier
                 .padding(10.dp)
         ){
-            Row {
+            Row{
                 Image(
-                    painterResource(id = R.drawable.tioaoki),
+                    painterResource(id = R.drawable.notificaciones2),
                     modifier = Modifier
                         .clip(CircleShape)
                         .padding(),
                     contentDescription = null,
                     contentScale = ContentScale.Fit
                 )
-                Box(
+                Text(
+                    text = "Notifications",
                     modifier = Modifier
-                ){
-                    Column {
-                        Text(
-                            text = "Steve Aoki",
-                            modifier = Modifier
-                                .padding(top = 5.dp)
-                                .padding(horizontal = 15.dp),
-                            fontSize = 20.sp
-                        )
-                        Text(
-                            text = "Ultra Miami",
-                            modifier = Modifier
-                                .padding(top = 5.dp)
-                                .padding(horizontal = 15.dp),
-                            fontSize = 12.sp
-                        )
-                    }
-                }
+                        .padding(top = 25.dp)
+                        .padding(horizontal = 15.dp),
+                    fontSize = 20.sp
+                )
                 Spacer(
                     modifier = Modifier.weight(1f)
                 )
@@ -218,7 +222,7 @@ fun locationContent(navController: NavController){
                     Icon(
                         modifier = Modifier
                             .size(30.dp),
-                        painter = painterResource(id = R.drawable.radio),
+                        painter = painterResource(id = R.drawable.click),
                         contentDescription = null
                     )
                 }
@@ -235,35 +239,22 @@ fun locationContent(navController: NavController){
             modifier = Modifier
                 .padding(10.dp)
         ){
-            Row {
+            Row{
                 Image(
-                    painterResource(id = R.drawable.hozho),
+                    painterResource(id = R.drawable.favoritos),
                     modifier = Modifier
                         .clip(CircleShape)
-                        .padding(),
+                        .padding(15.dp),
                     contentDescription = null,
                     contentScale = ContentScale.Fit
                 )
-                Box(
+                Text(
+                    text = "Favorites",
                     modifier = Modifier
-                ){
-                    Column {
-                        Text(
-                            text = "Hozho",
-                            modifier = Modifier
-                                .padding(top = 5.dp)
-                                .padding(horizontal = 15.dp),
-                            fontSize = 20.sp
-                        )
-                        Text(
-                            text = "Empire Music Festival",
-                            modifier = Modifier
-                                .padding(top = 5.dp)
-                                .padding(horizontal = 15.dp),
-                            fontSize = 12.sp
-                        )
-                    }
-                }
+                        .padding(top = 25.dp)
+                        .padding(horizontal = 15.dp),
+                    fontSize = 20.sp
+                )
                 Spacer(
                     modifier = Modifier.weight(1f)
                 )
